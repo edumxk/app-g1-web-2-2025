@@ -26,7 +26,7 @@ export function TarefaItem({ tarefa, onToggle }: TarefaItemProps) {
       </div>
       <button
           className={`favorite-button ${isFavorite ? 'favorited' : ''}`}
-          onClick={() => toggleFavorite}
+          onClick={() => toggleFavorite(tarefa)}
         >
           {isFavorite ? 'Remover Favorito ❤️' : 'Favoritar ⭐'}
         </button>

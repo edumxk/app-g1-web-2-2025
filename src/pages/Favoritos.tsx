@@ -5,11 +5,9 @@ import { Tarefa } from '../interfaces/Tarefa';
 import { useState } from 'react';
 
 function Favoritos() {
-  // Acessamos a lista global de favoritos com nosso hook
   const { favorites } = useFavorites();
 
   const [tasks, setTasks] = useState<Tarefa[]>([]);
-
 
   function toggleComplete(id: number) {
     const updatedTasks = tasks.map((task) => {
@@ -17,7 +15,6 @@ function Favoritos() {
         return {
           ...task,
           isDone: !task.isDone,
-          isFavorite: !task.isFavorite,
         };
       }
       return task;

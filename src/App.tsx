@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './componentes/NavBar';
+import Navbar from './componentes/Navbar';
 import Tarefas from './pages/Tarefas';
 import Favoritos from './pages/Favoritos';
 

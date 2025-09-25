@@ -7,8 +7,6 @@ function Tarefas()
 {
   const [tasks, setTasks] = useState<Tarefa[]>([]);
 
-
-  // A LÓGICA DE NEGÓCIO PERMANECE AQUI
   function handleAddTask(taskText: string) {
     const novaTarefa: Tarefa = {
       id: Date.now(),
@@ -19,7 +17,7 @@ function Tarefas()
     setTasks(tarefasAnteriores => [...tarefasAnteriores, novaTarefa]);
   }
   
-  function handleToggleTaskCompletion(id: number) {
+  function toggleComplete(id: number) {
     const updatedTasks = tasks.map((task) => {
       if (task.id === id) {
         return {
@@ -47,12 +45,12 @@ function Tarefas()
           <TaskList 
             titulo="Tarefas Pendentes"
             tarefas={pendingTasks}
-            onToggle={handleToggleTaskCompletion}
+            onToggle={toggleComplete}
           />
           <TaskList 
             titulo="Tarefas Finalizadas"
             tarefas={isDoneTasks}
-            onToggle={handleToggleTaskCompletion}
+            onToggle={toggleComplete}
           />
         </main>
       </div>
